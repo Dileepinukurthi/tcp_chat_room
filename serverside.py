@@ -61,7 +61,7 @@ def recieve():
             client.close()
             continue
 
-        if nickname == 'Dileep':
+        if nickname == 'Dileep(admin)':
             client.send('PASS'.encode('ascii'))
             password = client.recv(1024).decode('ascii')
             # I know it is lame, but my focus is mainly for Chat system and not a Login System
