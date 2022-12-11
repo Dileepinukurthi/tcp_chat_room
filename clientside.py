@@ -9,13 +9,13 @@ def enter_server():
         data = json.load(f)
     print('Your servers: ', end = "")
     for servers in data:
-        print(servers, end = " ")
+        print(servers, end = ", ")
     server_name = input("\nEnter the server name:")
     global nickname
     global password
     nickname = input("Choose Your Nickname:")
     if nickname == 'Dileep(admin)':
-        password = input("Enter Password for Dileep(admin):")
+        password = input("Enter Password for admin:")
     ip = data[server_name]["ip"]
     port = data[server_name]["port"]
     global client
@@ -30,7 +30,6 @@ def add_server():
 
     with open('servers.json', 'r') as f:
         data = json.load(f)
-    # Store the info of the new server in servers.json
     with open('servers.json', 'w') as f:
         data[server_name] = {"ip": server_ip, "port": server_port}
         json.dump(data, f, indent=4)
